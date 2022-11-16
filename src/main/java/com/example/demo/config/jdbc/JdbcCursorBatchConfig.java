@@ -39,8 +39,8 @@ public class JdbcCursorBatchConfig extends BaseConfig {
 		RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
 		
 		return new JdbcCursorItemReaderBuilder<Employee>() // Builderの生成
-				.dataSource(this.dataSource) // DataSourceのセット
 				.name("jdbcCursorItemReader") // 名前のセット
+				.dataSource(this.dataSource) // DataSourceのセット
 				.sql(SELECT_EMPLOYEE_SQL) // SQLのセット
 				.queryArguments(params) // パラメーター
 				.rowMapper(rowMapper) // rowMapperのセット
