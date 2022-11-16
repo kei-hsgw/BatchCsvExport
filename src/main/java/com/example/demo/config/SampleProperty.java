@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @ToString
 @Slf4j
-public class Sampleproperty {
+public class SampleProperty {
 
 	@Value("${file.name}")
 	private String fileName;
