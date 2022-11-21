@@ -3,6 +3,7 @@
 
 <mapper namespace="com.example.demo.repository.EmployeeMapper">
 
+	<!-- Cursor -->
 	<select id="findByGender" resultType="Employee">
 		SELECT
 			id
@@ -16,6 +17,24 @@
 		</where>
 		ORDER BY
 			id
+	</select>
+	
+	<!-- Paging -->
+	<select id="findByGenderPaging" resultType="Employee">
+		SELECT
+			id
+			, name
+			, age
+			, gender
+		FROM
+			employee
+		<where>
+			gender = #{genderParam}
+		</where>
+		ORDER BY
+			id
+		LIMIT #{_pagesize}
+		OFFSET #{_skiprows}
 	</select>
 
 </mapper>
